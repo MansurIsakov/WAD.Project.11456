@@ -1,0 +1,42 @@
+.header {
+  color: var(--white);
+  font-size: var(--text-sm);
+  font-weight: 300;
+  position: relative;
+  height: 96px;
+  border-bottom: 1px solid var(--gray);
+  position: sticky;
+  top: -16px;
+  padding-top: 16px;
+  z-index: 10000;
+  background-color: var(--black);
+
+  & a {
+    color: inherit;
+    transition: letter-spacing 0.2s ease-in;
+
+    &:hover {
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.header-nav {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 300;
+
+  &__col {
+    display: flex;
+    gap: 50px;
+  }
+}
+
+.header-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: inherit;
+}

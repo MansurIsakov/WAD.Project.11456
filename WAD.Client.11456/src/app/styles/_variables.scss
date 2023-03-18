@@ -1,0 +1,29 @@
+:root {
+  --accent: hsl(278, 63%, 48%);
+  --accent-light: hsl(278, 63%, 60%);
+  --black: hsl(0, 0%, 0%);
+  --white: hsl(0, 0%, 100%);
+  --gray: hsl(0, 0%, 20%);
+  --gray-dark: hsl(0, 0%, 10%);
+
+  --warning: hsl(357, 98%, 63%);
+  --success: hsl(147, 45%, 51%);
+
+  // text font size
+  --text-xs: 0.875rem; // 14px
+  --text-sm: 1rem; // 16 px
+  --text-base: 1.25rem; // 20 px
+  --text-medium: 1.5rem; // 24 px
+  --text-lg: 2rem; // 32 px
+  --text-xl: 4rem; // 64 px
+
+  // title font size
+  --title-xs: 1.5rem; // 24px
+  --title-medium: 2.25rem; // 36 px
+  --title-xl: 3.3125rem; // 53 px
+
+  --spacing-block-xs: 12px;
+  --spacing-block-s: 20px;
+  --spacing-block-m: 24px;
+  --spacing-block-l: 32px;
+}

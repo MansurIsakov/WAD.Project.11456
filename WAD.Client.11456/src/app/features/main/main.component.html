@@ -1,0 +1,27 @@
+<main>
+  <div class="container flex-align-center my-3">
+    <div class="main-showcase">
+      <div class="main-showcase__header">
+        <h1>Introducing UniGroup</h1>
+        <span class="main-showcase__decor">Beta</span>
+      </div>
+      <p>
+        Ultimate solution for each student. <br />
+        Find faster, think bigger and learn more. <br />
+        Like magic!
+      </p>
+      <a routerLink="/discover" class="btn btn-primary"
+        >Find university of your dream</a
+      >
+      <img
+        class="main-showcase__hero"
+        src="./assets/images/hero-desktop.avif"
+        alt="Hero Image from Notion AI" />
+    </div>
+    <div class="cards">
+      <app-main-card
+        *ngFor="let card of cardData; let index = index"
+        [card]="card" />
+    </div>
+  </div>
+</main>

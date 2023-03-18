@@ -1,0 +1,14 @@
+<a routerLink="/blogs/1">
+  <li class="post card">
+    <div class="post__poster"></div>
+    <h2 class="post__title">{{ blogPost.title }}</h2>
+    <p>{{ blogPost.thesis }}</p>
+    <div class="post-author">
+      <div class="post-author__image"></div>
+      <div class="post-author__info">
+        <h3>{{ blogPost.author.name }}</h3>
+        <span>{{ blogPost.author.role }}</span>
+      </div>
+    </div>
+  </li>
+</a>

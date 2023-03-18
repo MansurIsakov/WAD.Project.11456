@@ -1,0 +1,19 @@
+.card {
+  margin: 5rem auto 0;
+  gap: 1rem;
+  justify-content: center;
+  height: 60%;
+
+  &__helper {
+    font-size: var(--text-xs);
+    color: darkgray;
+  }
+}
+
+.form {
+  padding-top: 0.5rem;
+
+  input {
+    padding: 1rem;
+  }
+}

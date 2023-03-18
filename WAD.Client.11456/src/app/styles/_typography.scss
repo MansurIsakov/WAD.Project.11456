@@ -1,0 +1,21 @@
+* {
+  font-family: 'Poppins', sans-serif;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  font-synthesis: none;
+}
+
+.global-title-size-xl {
+  font-size: var(--title-xl);
+  line-height: 3.625rem;
+}
+
+.global-title-size-m {
+  font-size: var(--title-medium);
+  line-height: 2.5rem;
+}
+
+.global-title-size-xs {
+  font-size: var(--title-xs);
+  line-height: 1.875rem;
+}
