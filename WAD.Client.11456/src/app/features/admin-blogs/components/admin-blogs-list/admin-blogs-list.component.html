@@ -1,0 +1,22 @@
+<button class="btn my-3" (click)="onCreateModalToggle()">Create New</button>
+<ul *ngIf="blogs?.length; else noContent">
+  <app-admin-blogs-item
+    *ngFor="let blog of blogs"
+    (edit)="onEdit($event)"
+    [blog]="blog"></app-admin-blogs-item>
+</ul>
+
+<ng-template #noContent>
+  <p style="color: aliceblue">No blogs yet!</p>
+</ng-template>
+
+<app-create-blog-modal
+  *ngIf="isCreateModalOpen"
+  (modalClosed)="onCreateModalToggle()">
+</app-create-blog-modal>
+
+<app-edit-blog-modal
+  *ngIf="isEditModalOpen"
+  (modalClosed)="onEditModalToggle()"
+  [incomingBlog]="blog">
+</app-edit-blog-modal>

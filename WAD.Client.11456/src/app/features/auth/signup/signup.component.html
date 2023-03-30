@@ -1,0 +1,49 @@
+<div class="container signup flex-align-center">
+  <h1 class="signup__title global-title-size-xl">Sign up</h1>
+  <div class="signup-form__socials">
+    <button class="btn btn-white">
+      <fast-svg name="google" size="15" alt="Google logo"></fast-svg>
+      Continue with Google
+    </button>
+    <button class="btn btn-white">
+      <fast-svg name="apple" size="15" alt="Apple logo"></fast-svg>
+      Continue with Apple
+    </button>
+  </div>
+  <div class="spacing"></div>
+  <form
+    class="form signup-form"
+    #authForm="ngForm"
+    (ngSubmit)="onSubmit(authForm)">
+    <div class="form-control">
+      <label for="email" class="form-control__label">Email</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        class="form-control__input"
+        required
+        [(ngModel)]="user.email"
+        #email="ngModel"
+        placeholder="Enter email" />
+    </div>
+    <div class="form-control">
+      <label for="name" class="form-control__label">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        class="form-control__input"
+        required
+        [(ngModel)]="user.name"
+        #name="ngModel"
+        placeholder="Enter name" />
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!authForm.valid">
+      Enter
+    </button>
+  </form>
+  <p class="signup--no-account">
+    Already have an account? <a href="/login">Log in!</a>
+  </p>
+</div>

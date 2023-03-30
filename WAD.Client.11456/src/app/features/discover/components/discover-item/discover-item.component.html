@@ -1,0 +1,11 @@
+<a [routerLink]="['/universities/' + university.id]">
+  <li class="card discover">
+    <div class="discover__header">
+      <div class="discover__image">
+        <img [src]="university.image" [alt]="'Image' + university.name" />
+      </div>
+      <h3>{{ university.name }}</h3>
+    </div>
+    <span>{{ university.location }}</span>
+  </li>
+</a>

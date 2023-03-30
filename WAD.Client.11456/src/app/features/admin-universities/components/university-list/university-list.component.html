@@ -1,0 +1,21 @@
+<button class="btn my-3" (click)="onCreateModalToggle()">Create New</button>
+<ul *ngIf="universities?.length; else noContent">
+  <app-admin-university-item
+    *ngFor="let uni of universities"
+    (edit)="onEdit($event)"
+    [university]="uni"></app-admin-university-item>
+</ul>
+
+<ng-template #noContent>
+  <p style="color: aliceblue">No universities yet!</p>
+</ng-template>
+
+<app-create-uni-modal
+  *ngIf="isCreateModalOpen"
+  (modalClosed)="onCreateModalToggle()" />
+
+<app-edit-uni-modal
+  *ngIf="isEditModalOpen"
+  (modalClosed)="onEditModalToggle()"
+  [uni]="university">
+</app-edit-uni-modal>

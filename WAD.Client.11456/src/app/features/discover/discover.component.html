@@ -1,0 +1,9 @@
+<section class="container flex-align-center">
+  <app-discover-search
+    style="width: 100%"
+    (onSearch)="onSearchHandler($event)"></app-discover-search>
+  <app-discover-list
+    [universitiesList]="
+      universitiesList$ | async | filter : searchValue : 'university'
+    "></app-discover-list>
+</section>

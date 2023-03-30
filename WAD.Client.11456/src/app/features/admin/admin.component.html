@@ -1,0 +1,13 @@
+<main>
+  <div class="container flex-align-center my-3">
+    <div class="admin">
+      <h2>Welcome, Admin</h2>
+      <p>In this section you can manage your university and blog posts.</p>
+    </div>
+    <div class="cards">
+      <app-main-card
+        *ngFor="let card of cardData; let index = index"
+        [card]="card" />
+    </div>
+  </div>
+</main>

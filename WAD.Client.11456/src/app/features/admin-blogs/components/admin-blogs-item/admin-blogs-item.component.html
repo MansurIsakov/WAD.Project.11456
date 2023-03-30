@@ -1,0 +1,9 @@
+<li class="card blog">
+  <div class="blog__image">
+    <img [src]="blog.coverImage" [alt]="'Image' + blog.title" />
+  </div>
+  <div class="blog__header">
+    <h3>{{ blog.title }}</h3>
+    <span (click)="edit.emit(blog)" style="cursor: pointer">Edit</span>
+  </div>
+</li>

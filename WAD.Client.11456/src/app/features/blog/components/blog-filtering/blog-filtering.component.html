@@ -1,0 +1,8 @@
+<ul class="filters-list" *ngIf="unisShortNames$ | async as shortNames">
+  <li
+    *ngFor="let sh of shortNames"
+    [class.active]="sh.shortName === selectedUniShortName"
+    (click)="filterByUni(sh.shortName)">
+    {{ sh.shortName }}
+  </li>
+</ul>

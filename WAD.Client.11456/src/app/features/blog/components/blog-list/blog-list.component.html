@@ -1,0 +1,11 @@
+<ul>
+  <app-blog-item *ngFor="let post of paginatedBlogsList()" [blogPost]="post">
+  </app-blog-item>
+</ul>
+
+<div class="blogs-actions">
+  <button *ngIf="page > 1" (click)="page = page - 1" class="btn">Back</button>
+  <button *ngIf="hasNextPage()" (click)="page = +page + 1" class="btn">
+    Forward
+  </button>
+</div>

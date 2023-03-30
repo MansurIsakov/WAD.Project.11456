@@ -1,0 +1,13 @@
+<div class="card">
+  <div class="form">
+    <input
+      type="text"
+      [(ngModel)]="searchValue"
+      (keyup)="onSearchChange()"
+      placeholder="Enter name of university"
+      class="form-control__input" />
+  </div>
+  <p class="discover-search__helper" (click)="setDefault()">
+    Search by Name, ex. <span style="cursor: pointer"> WIUT</span>
+  </p>
+</div>

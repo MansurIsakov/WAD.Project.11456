@@ -1,0 +1,23 @@
+<a [routerLink]="'/blogs/' + blogPost.id">
+  <li class="post card">
+    <div class="post__poster">
+      <img
+        [src]="blogPost.coverImage"
+        [alt]="'Blog Cover - ' + blogPost.title" />
+    </div>
+    <h2 class="post__title">{{ blogPost.title }}</h2>
+    <p>{{ blogPost.content }}</p>
+    <div class="post__bottom">
+      <div class="post-author">
+        <div class="post-author__image"></div>
+        <div class="post-author__info">
+          <h3>{{ blogPost.author }}</h3>
+          <span>{{ 'Publisher' }}</span>
+        </div>
+      </div>
+      <div class="post__tag">
+        <span>{{ blogPost.university?.shortName }}</span>
+      </div>
+    </div>
+  </li>
+</a>

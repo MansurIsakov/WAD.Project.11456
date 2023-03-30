@@ -1,0 +1,18 @@
+<div class="container blog my-3" *ngIf="blogs.length; else noContent">
+  <app-blog-filtering
+    (onFilterByUni)="filterByUni($event)"></app-blog-filtering>
+  <app-blog-list
+    [blogPosts]="blogs | filter : filterValue : 'blog'"></app-blog-list>
+</div>
+
+<ng-template #noContent>
+  <div style="height: 100%" class="container my-3">
+    <p style="color: aliceblue">No blogs yet!</p>
+    <a
+      href="/admin/blogs"
+      class="btn btn-white"
+      style="width: fit-content; margin-top: 1rem"
+      >Add blog</a
+    >
+  </div>
+</ng-template>

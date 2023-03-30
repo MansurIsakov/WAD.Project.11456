@@ -1,0 +1,21 @@
+main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.admin {
+  color: var(--white);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.cards {
+  display: flex;
+  gap: 8rem;
+  margin-top: 4.375rem; // 70px
+}

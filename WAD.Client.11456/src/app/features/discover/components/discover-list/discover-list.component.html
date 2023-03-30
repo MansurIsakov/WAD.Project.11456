@@ -1,0 +1,10 @@
+<ul class="mt-3" *ngIf="universitiesList?.length; else noContent">
+  <app-discover-item
+    *ngFor="let universityEl of universitiesList"
+    [university]="universityEl"></app-discover-item>
+</ul>
+
+<ng-template #noContent>
+  <p style="color: aliceblue">No universities yet!</p>
+  <a href="/admin/universities" class="btn btn-white">Add university</a>
+</ng-template>
