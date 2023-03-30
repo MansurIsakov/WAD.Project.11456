@@ -1,0 +1,126 @@
+<div class="modal">
+  <button class="btn btn--close-modal" (click)="modalClosed.emit()">
+    &times;
+  </button>
+  <h2 class="modal__header global-title-size-m">Create New Blog</h2>
+  <form class="form" #blogForm="ngForm" (ngSubmit)="onSubmit(blogForm)">
+    <!-- Title -->
+    <div class="form-control">
+      <label class="form-control__label" for="blogTitle">Blog Title</label>
+      <input
+        class="form-control__input"
+        type="text"
+        id="blogTitle"
+        name="blogTitle"
+        [(ngModel)]="blog.title"
+        required
+        #blogTitle="ngModel" />
+      <span class="error" *ngIf="!blogTitle.valid && blogTitle.touched">
+        Please, provide the title for blog!
+      </span>
+    </div>
+
+    <!-- Cover Image -->
+    <div class="form-control">
+      <label class="form-control__label" for="blogCoverImage">
+        Blog Cover Image
+      </label>
+      <input
+        class="form-control__input"
+        type="text"
+        id="blogCoverImage"
+        name="blogCoverImage"
+        [(ngModel)]="blog.coverImage"
+        required
+        #blogCoverImage="ngModel" />
+      <span
+        class="error"
+        *ngIf="!blogCoverImage.valid && blogCoverImage.touched">
+        Please, provide the cover image link for blog!
+      </span>
+    </div>
+
+    <!-- Author -->
+    <div class="form-control">
+      <label class="form-control__label" for="blogAuthor"> Blog Author </label>
+      <input
+        class="form-control__input"
+        type="text"
+        id="blogAuthor"
+        name="blogAuthor"
+        [(ngModel)]="blog.author"
+        required
+        #blogAuthor="ngModel" />
+      <span class="error" *ngIf="!blogAuthor.valid && blogAuthor.touched">
+        Please, provide the author for blog!
+      </span>
+    </div>
+
+    <!-- Content -->
+    <div class="form-control">
+      <label class="form-control__label" for="blogContent">
+        Blog Content
+      </label>
+      <textarea
+        class="form-control__input"
+        type="text"
+        id="blogContent"
+        name="blogContent"
+        [(ngModel)]="blog.content"
+        required
+        #blogContent="ngModel"></textarea>
+      <span class="error" *ngIf="!blogContent.valid && blogContent.touched">
+        Please, provide the content for blog!
+      </span>
+    </div>
+
+    <!-- University -->
+    <div class="form-control" *ngIf="uniShortNames$ | async as uniShortNames">
+      <label class="form-control__label" for="blogUniversity">
+        Blog University
+      </label>
+      <select
+        name="blogUniversity"
+        id="blogUniversity"
+        class="form-control__input"
+        [(ngModel)]="blog.university.id"
+        required
+        #blogUniversity="ngModel">
+        <option [value]="uni.id" *ngFor="let uni of uniShortNames">
+          {{ uni.shortName }}
+        </option>
+      </select>
+
+      <span
+        class="error"
+        *ngIf="!blogUniversity.valid && blogUniversity.touched">
+        Please, pick the university for blog!
+      </span>
+      <span *ngIf="!uniShortNames.length">
+        You dont see your university?
+        <a
+          class="btn btn-white"
+          routerLink="/admin/universities"
+          routerLinkActive="active">
+          Add new university
+        </a>
+      </span>
+    </div>
+
+    <div class="modal__actions">
+      <button
+        type="button"
+        class="btn btn-outline"
+        (click)="modalClosed.emit()">
+        Cancel
+      </button>
+      <button
+        type="submit"
+        [class]="'btn btn-primary'"
+        [disabled]="!blogForm.valid">
+        Create
+      </button>
+    </div>
+  </form>
+</div>
+<div class="overlay" (click)="modalClosed.emit()"></div>

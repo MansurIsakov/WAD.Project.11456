@@ -1,0 +1,60 @@
+// Modals
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 60rem;
+  background-color: var(--gray-dark);
+  padding: 2rem 3rem;
+  box-shadow: 0 4rem 6rem rgba(255, 255, 255, 0.3);
+  z-index: 10002;
+  transition: all 0.5s;
+  animation: moveModal 0.5s;
+  color: var(--white);
+  border-radius: 8px;
+
+  &__actions {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2rem;
+    gap: 1rem;
+
+    .btn {
+      min-width: 200px;
+      width: 100%;
+    }
+  }
+
+  form {
+    overflow: auto;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 10001;
+  transition: all 0.5s;
+}
+
+.modal__header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.btn--close-modal {
+  font-family: inherit;
+  color: inherit;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+  font-size: var(--text-lg);
+  background-color: transparent;
+}

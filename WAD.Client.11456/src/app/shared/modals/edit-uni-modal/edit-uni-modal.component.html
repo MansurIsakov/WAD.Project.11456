@@ -1,0 +1,163 @@
+<div class="modal">
+  <button class="btn btn--close-modal" (click)="modalClosed.emit()">
+    &times;
+  </button>
+  <h2 class="modal__header global-title-size-m">Edit University</h2>
+  <form class="form" #uniForm="ngForm" (ngSubmit)="onSubmit(uniForm)">
+    <!-- Name -->
+    <div class="form-control">
+      <label class="form-control__label" for="uniName">University Name</label>
+      <input
+        class="form-control__input"
+        type="text"
+        id="uniName"
+        name="uniName"
+        [(ngModel)]="university.name"
+        required
+        #uniName="ngModel" />
+      <span class="error" *ngIf="!uniName.valid && uniName.touched"
+        >Please, provide the name for univesity!</span
+      >
+    </div>
+    <!-- Short Name -->
+    <div class="form-control">
+      <label class="form-control__label" for="uniShortName">Short Name</label>
+      <input
+        class="form-control__input"
+        type="text"
+        id="uniShortName"
+        name="uniShortName"
+        [(ngModel)]="university.shortName"
+        required
+        #uniShortName="ngModel" />
+      <span class="error" *ngIf="!uniShortName.valid && uniShortName.touched"
+        >Please, provide the short name for university!</span
+      >
+    </div>
+    <!-- I realesed that I have too many fields -->
+    <!-- Description
+      <div class="form-control">
+        <label class="form-control__label" for="uniDescription"
+          >Description</label
+        >
+        <textarea
+          class="form-control__input"
+          type="text"
+          id="uniDescription"
+          name="uniDescription"
+          [ngModel]="university?.description"
+          required
+          #uniDescription="ngModel"></textarea>
+        <span
+          class="error"
+          *ngIf="!uniDescription.valid && uniDescription.touched"
+          >Please, provide the description for university!</span
+        >
+      </div> -->
+    <!-- Courses -->
+    <div class="form-control">
+      <label class="form-control__label" for="uniCourses">Courses</label>
+      <input
+        class="form-control__input"
+        type="text"
+        id="uniCourses"
+        name="uniCourses"
+        [(ngModel)]="university.courses"
+        required
+        #uniCourses="ngModel" />
+      <span class="error" *ngIf="!uniCourses.valid && uniCourses.touched"
+        >Please, provide the courses for university!</span
+      >
+    </div>
+    <!-- Admission -->
+    <div class="form-control">
+      <label class="form-control__label" for="uniAdmission"
+        >Enter Adminssion YT Video Link</label
+      >
+      <input
+        class="form-control__input"
+        type="text"
+        id="uniAdmission"
+        name="uniAdmission"
+        [(ngModel)]="university.admission"
+        required
+        #uniAdmission="ngModel" />
+      <span class="error" *ngIf="!uniAdmission.valid && uniAdmission.touched"
+        >Please, provide the admission for university</span
+      >
+    </div>
+    <!-- Scholarship -->
+    <div class="form-control">
+      <label class="form-control__label" for="uniScolarship">Scolarship</label>
+      <input
+        class="form-control__input"
+        type="number"
+        id="uniScolarship"
+        name="uniScolarship"
+        [(ngModel)]="university.scolarship"
+        required
+        #uniScolarship="ngModel" />
+      <span class="error" *ngIf="!uniScolarship.valid && uniScolarship.touched"
+        >Please, provide the scolarship for university</span
+      >
+    </div>
+    <!-- Tuition Fee -->
+    <div class="form-control">
+      <label class="form-control__label" for="uniTuition">Tuition Fee</label>
+      <input
+        class="form-control__input"
+        type="number"
+        id="uniTuition"
+        name="uniTuition"
+        [(ngModel)]="university.tuitionFee"
+        required
+        #uniTuition="ngModel" />
+      <span class="error" *ngIf="!uniTuition.valid && uniTuition.touched"
+        >Please, provide the tuition fee for university!
+      </span>
+    </div>
+    <!-- Image -->
+    <div class="form-control">
+      <label class="form-control__label" for="uniImage">Enter Image Link</label>
+      <input
+        class="form-control__input"
+        type="text"
+        id="uniImage"
+        name="uniImage"
+        [(ngModel)]="university.image"
+        required
+        #uniImage="ngModel" />
+      <span class="error" *ngIf="!uniImage.valid && uniImage.touched"
+        >Please, provide the image for university</span
+      >
+    </div>
+    <!-- Location -->
+    <div class="form-control">
+      <label class="form-control__label" for="uniLocation">Location</label>
+      <input
+        class="form-control__input"
+        type="text"
+        id="uniLocation"
+        name="uniLocation"
+        [(ngModel)]="university.location"
+        required
+        #uniLocation="ngModel" />
+      <span class="error" *ngIf="!uniLocation.valid && uniLocation.touched"
+        >Please, provide the location for university!</span
+      >
+    </div>
+
+    <div class="modal__actions">
+      <button
+        type="button"
+        class="btn btn-outline"
+        (click)="deleteUni(university.id)">
+        Delete
+      </button>
+      <button type="submit" class="btn btn-primary" [disabled]="!uniForm.valid">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
+<div class="overlay" (click)="modalClosed.emit()"></div>
