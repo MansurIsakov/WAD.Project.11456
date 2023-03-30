@@ -1,0 +1,32 @@
+<div class="card university-card">
+  <div class="university-card__image">
+    <img [src]="uniImage" [alt]="'Image - ' + uniImage" />
+  </div>
+  <h2 class="university-card__title">{{ uniName }}</h2>
+  <ul class="university-card__info">
+    <li><fast-svg name="map-pin" size="15"></fast-svg> {{ uniLocation }}</li>
+    <li>
+      <fast-svg name="globe" size="15"></fast-svg>
+      <a href="#">{{ uniShortName | lowercase }}.uz</a>
+    </li>
+    <li><fast-svg name="phone" size="15"></fast-svg> +998900000000</li>
+    <li>
+      <fast-svg name="at-sign" size="15"></fast-svg>
+      <a href="mailto:dummy@gmail.com">dummy@gmail.com</a>
+    </li>
+  </ul>
+  <ul class="university-card__socials">
+    <li class="university-card__social">
+      <fast-svg name="facebook" size="17"></fast-svg>
+    </li>
+    <li class="university-card__social">
+      <fast-svg name="instagram" size="17"></fast-svg>
+    </li>
+    <li class="university-card__social">
+      <fast-svg name="telegram" size="17"></fast-svg>
+    </li>
+    <li class="university-card__social">
+      <fast-svg name="youtube" size="17"></fast-svg>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,10 @@
+<div class="container my-3 university" *ngIf="university$ | async as uni">
+  <app-university-card
+    [uniName]="uni.name"
+    [uniImage]="uni.image"
+    [uniLocation]="uni.location"
+    [uniShortName]="uni.shortName"></app-university-card>
+  <app-university-info
+    [university]="uni"
+    class="university__info"></app-university-info>
+</div>

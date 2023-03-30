@@ -1,0 +1,9 @@
+.university {
+  height: 100%;
+  display: flex;
+  gap: 3rem;
+
+  &__info {
+    flex: 1;
+  }
+}

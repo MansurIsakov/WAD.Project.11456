@@ -1,0 +1,13 @@
+<div class="container post my-3" *ngIf="blog$ | async as blog">
+  <div class="post__poster">
+    <img [src]="blog.coverImage" [alt]="'Blog Cover - ' + blog.title" />
+  </div>
+  <div class="post__details">
+    <h3>Author: {{ blog.author }}</h3>
+    <span>Created on {{ blog.createdAt.slice(0, 15) }}</span>
+  </div>
+  <h2 class="global-title-size-xl post__title">{{ blog.title }}</h2>
+  <p>
+    {{ blog.content }}
+  </p>
+</div>

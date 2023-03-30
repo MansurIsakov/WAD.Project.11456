@@ -1,0 +1,12 @@
+.home-card {
+  &__title {
+    font-weight: 600;
+    font-size: var(--text-medium);
+    color: var(--white);
+  }
+
+  &__desc {
+    font-size: var(--text-sm);
+    font-weight: 300;
+  }
+}
