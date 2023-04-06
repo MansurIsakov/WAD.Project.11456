@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using WAD.API._11456.Context;
 using WAD.API._11456.Interfaces;
 using WAD.API._11456.Repository;
-
+using System.IO;
 
 
 namespace WAD.API._11456
