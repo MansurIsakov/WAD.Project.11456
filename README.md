@@ -10,4 +10,4 @@
 - Run `npm i` command on termina; inside WAD.Client.11456 project, in that way, you will install node modules.
 - Run `ng serve` command on terminal inside project and navigate to `http://localhost:4200/`
 
-More detailed description of development setup is written inside profect folders.
+Voila!
