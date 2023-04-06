@@ -14,6 +14,9 @@ namespace WAD.API._11456
 {
     public class Startup
     {
+        private const string DataDirectory = "|DataDirectory|";
+        private string _appPath;
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -26,7 +29,7 @@ namespace WAD.API._11456
         {
 
             services.AddDbContext<UniContext>(o => o.UseSqlServer(Configuration.GetConnectionString
-            ("UniDB")));
+            ("UniDB").Replace(DataDirectory, _appPath)));
             services.AddControllers();
             services.AddTransient<IBlogRepository, BlogRepository>();
             services.AddTransient<IUniversityRepository, UniversityRepository>();
@@ -36,6 +39,8 @@ namespace WAD.API._11456
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            _appPath = Path.Combine(env.ContentRootPath, "AppData");
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
